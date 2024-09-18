@@ -60,9 +60,9 @@ class UserController extends Controller
         
         //     $posts = Post::paginate();
         // return view('posts',['post'=>$posts]);
-        $post = ['1'=>'2'];
-        $post->appends(['name'=>'username']);
-        print_r($post);
+        // $post = ['1'=>'2'];
+        // $post->appends(['name'=>'username']);
+        // print_r($post);
      
     }
 }

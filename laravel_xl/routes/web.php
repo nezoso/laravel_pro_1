@@ -5,7 +5,29 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\MusicController;
+use App\Http\Controllers\PhoneController;
+
+
 use Illuminate\Http\Request;
+
+
+//resources routes 
+Route::resources([
+    'article'=> ArticleController::class,
+    'music'=> MusicController::class,
+]);
+
+Route::resource('phones.music',PhoneController::class)->except(['show'])->names([
+    'create'=>'phonesMusic.create',
+    'edit'=>'phonesMusic.edit',
+    'index'=>'phonesMusic.index'
+]);
+
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,3 +55,4 @@ Route::prefix('front')->group(function(){
 
 
 Route::get('/posts',[UserController::class,'show']);
+
