@@ -8,7 +8,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return 'ok';
+        return Product::all();
     }
     public function post_product()
     {

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -29,3 +30,6 @@ Route::prefix('admin')->group(function(){
 Route::prefix('front')->group(function(){
     Route::get('/single_page/{singlePage}',[ProductController::class,'single'])->name('single');
 });
+
+
+Route::get('/posts',[UserController::class,'show']);
