@@ -14,6 +14,17 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->text('text');
+            $table->string('email')->unique();
+            $table->string('password')->nullable();
+            $table->string('img')->nullable();
+            $table->boolean('is_active')->default(0);
+            $table->enum('status',['unread','read'])->default('unread')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('token');
+            $table->integer('code')->default(0)->nullable()->unique();
+            $table->integer('view_count')->default(0);
+            $table->BigInteger('price');
+            $table->enum('pay_status',['paid','unpaid','prepration']);
             $table->timestamps();
         });
     }

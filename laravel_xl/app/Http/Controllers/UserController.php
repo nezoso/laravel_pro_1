@@ -8,6 +8,7 @@ class UserController extends Controller
 {
     public function show()
     {
-        return  Post::all();
+          $post = Post::all();
+          return view('posts',['post'=>$post]);
     }
 }
