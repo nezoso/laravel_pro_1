@@ -6,6 +6,8 @@
 	<title>post</title>
 </head>
 <body>
-		
+		<?php 
+			echo $post;
+		?>
 </body>
 </html>
